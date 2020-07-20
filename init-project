@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Copyright (c) 2020 Abhijit Bose <https://boseji.com>
+# SPDX-License-Identifier: Apache-2.0
+
+set -e
+
+# Get the Source Directory
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+PROJ=`basename ${DIR}`
+BUILD_DIR="${DIR}/../build_${PROJ}"
+WEST_PATH=`find ~ -name ".west" | head -1`
+WORKSPACE_PATH="$( cd "$( dirname "${WEST_PATH}" )" >/dev/null 2>&1 && pwd )"
+
+# Get Board or Default STM32F3DISCOVERY
+BOARD=${1-stm32f3_disco}
+
+# Check if we already have the build directory
+if [ -d "${BUILD_DIR}" ]
+then
+	rm -rf ${BUILD_DIR}
+fi
+
+# Configure Environment
+source ${WORKSPACE_PATH}/env.sh
+
+# Create the directory
+mkdir -p ${BUILD_DIR}
+
+# Change to the correct directory
+cd ${BUILD_DIR}
+
+# Build the Project Directory
+cmake -G "Eclipse CDT4 - Ninja" -DBOARD=${BOARD} ${DIR}
+
