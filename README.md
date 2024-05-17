@@ -7,7 +7,7 @@ provides a functional example of `reading GPIO's`.
 
 We are using the [STM32F3 Discovery](https://www.st.com/en/evaluation-tools/stm32f3discovery.html) board as a target for this project.
 
-[![STM32F3 Discovery board running Zephyr OS](https://boseji.com/images/zephyr-part-2-blinky-example-stm32f3discovery-1.jpg)](https://boseji.com/posts/zephyr-part-3-app-dev)
+[![STM32F3 Discovery board running Zephyr OS](./docs/img/zephyr-part-2-blinky-example-stm32f3discovery-1.jpg)](https://boseji.com/posts/zephyr-part-3-app-dev)
 
 ## Scripts
 
