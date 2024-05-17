@@ -3,6 +3,7 @@
 # Copyright (c) 2020 Abhijit Bose <https://boseji.com>
 # SPDX-License-Identifier: Apache-2.0
 
+# Exit on Error
 set -e
 
 # Get the Source Directory
